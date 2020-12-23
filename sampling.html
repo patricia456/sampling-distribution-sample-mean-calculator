@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Sampling Distribution of The Sample Mean Calculator</title>
+	<link rel="stylesheet"  href="css/bootstrap.min.css">
+	<style>
+
+
+		body{
+		background-image: url("image/light.jpg");
+
+		}
+
+		p.round1 {
+	    border-style: double;
+	    border-color: green;
+	    margin-top: 90px;
+	    margin-bottom: 50px;
+	    margin-right: 50px;
+	    margin-left: 80px;
+	    outline: #4CAF50 solid 10px;
+	    background-color: white;
+	    text-align: center;
+		}
+
+		.border{
+	    border: 10px solid black;
+	    border-color: black;
+	    border-style:double;
+	  	margin:8px;
+	  	padding:8px;
+	    }
+	    .box{
+	    	border: 5px solid black;
+    		background: url("image/green.jpg");
+    		color: white;
+
+	    }
+
+	    .text{
+	    	font-size: 23px;
+	    	font-family: Comic Sans MS;
+	    	text-align: center;
+	    }
+
+	    .formula{
+	    	border-style: double;
+	    	border-color: black;
+	    	font-family: Comic Sans MS;
+	    	text-align: center;
+	    }
+	    .marginpadding{
+	    	
+	    }
+	    
+		.style{
+			text-align: center; 
+			padding: 80px; 
+			
+		}
+
+		.error{
+			border:5px solid black;
+			margin: 10px;
+	    	padding:20px;
+	    	background-color: white;
+		}
+
+	
+
+
+		</style>
+
+	</head>
+				<body>
+					<div class="container-fluid">
+						<div class="row">
+					<div class="col-sm-12 ">
+					<p class="round1" style="font-size: 50px; font-family: Comic Sans MS;"> Sampling Distribution of the Sample Mean Calculator</p>
+					</div>
+
+
+					<div class="col-sm-12 ">
+				 	<form class=" marginpadding text box" action="" method="post">
+				 		<br>
+					Input the following given:
+					<input type="text" name="" placeholder=" Population Mean" id="mean" >
+					<input type="text" name="" placeholder=" Population Standard Deviation" id="standardDeviation" >
+					<input type="text" name="" placeholder="Sample Size" id="sampleSize"><span>    <input type="reset" name="" value="Clear">  </span><br><br>
+					<p>After this, automatically click the buttons below </p><br><br>
+					<p><a href="manual.html" style="color: pink">How to use this?</a></p>
+				
+					</div>
+
+
+					<!--Mean-->
+					<div class="col-sm-12 col-md-6 style text box">
+					Find the <b>Mean</b> of the sample mean 𝑿<br>
+					<input type="button" style="background-color: green; color: white" name="" value="Compute Mean" id="click_me1" onclick="Mean()"><br><br>
+					<input type="text" name="" placeholder="Display Formula and Solution" id="displayFormula"><br><br>
+					<input type="text" name="" placeholder="Answer" id="displayMean"><br><br><br>
+					</div>
+
+
+					<!--The Standard Deviation-->
+					<div class="col-sm-12 col-md-6 style text box">
+					Find the <b>Standard Deviation</b> of the sample mean 𝑿<br>
+					<input type="button" style="background-color: green; color: white"  name="" value="Compute Standard Deviation" id="click_me1" onclick="StandardDeviation()"><br>
+					<input type="text" name="" placeholder="Display Part 1 Solution of Standard deviation" id="displayFormulaSD"
+					style="width:100%; padding: 30px 30px; margin: 10px 0; box-sizing: border-box;" 
+					><br>
+					<input type="text" name="" placeholder="Display Part 2 Solution of Standard deviation" id="displayFormulaSD2"
+					style="width:100%; padding: 30px 30px; margin: 10px 0; box-sizing: border-box;" 
+					><br>
+					<input type="text" name="" placeholder="Answer" id="displaySD">
+					</div>
+					<br><br>
+
+
+					<!--The Variance-->
+					<div class="col-sm-12 col-md-6 style text box">
+					Find the <b>Variance</b> of the sample mean 𝑿<br>
+					<input type="button" style="background-color: green; color: white" name="" value="Compute Variance" id="click_me1" onclick="Variance()"><br>
+					
+					<input type="text" name="" placeholder="Display Part 1 Solution of Variance" id="displayFormulaVariance" style="width:100%; padding: 30px 30px; margin: 10px 0; box-sizing: border-box;"> <br>
+
+					<input type="text" name="" placeholder="Display Part 2 Solution of Variance" id="displayFormulaVariance2" style="width:100%; padding: 30px 30px; margin: 10px 0; box-sizing: border-box;"> <br>
+					<input type="text" name="" placeholder="Answer" id="displayVariance">
+					</div>
+					<br>
+
+					<!--Compute Probability in between-->
+					<div class="col-sm-12 col-md-6 style text box">
+					Find the <b>Probability in between</b> of the sample mean 𝑿<br>
+					<input type="text" name="" id="firstValue" placeholder="First Value">
+					<input type="text" name="" id="secondValue" placeholder="Second Value"><br><br>
+					<input type="button" style="background-color: green; color: white"  value="Compute Probability in between" id="click_me1" onclick="Between()"><br>
+					<input type="text" name="" placeholder="Display Part 1 Solution  " id="displayFormulaBetween" style="width:100%; padding: 30px 30px; margin: 10px 0; box-sizing: border-box;"><br>
+					<input type="text" name="" placeholder="Display Part 2 Solution " id="displayFormulaBetween2" style="width:100%; padding: 30px 30px; margin: 10px 0; box-sizing: border-box;"><br>
+					<input type="text" name="" placeholder="Display Part 3 Solution " id="displayFormulaBetween3" style="width:100%; padding: 30px 30px; margin: 10px 0; box-sizing: border-box;"><br>
+					<input type="text" name="" placeholder="Display Part 4 Solution " id="displayFormulaBetween4" style="width:100%; padding: 30px 30px; margin: 10px 0; box-sizing: border-box;"><br><br>
+					<input type="text" name="" placeholder="Answer" id="displayBetween"><br>
+					<input type="text" name="" placeholder="Round Off " id="displayRoundBetween"><div class="error" style="color:red;">Note: The Range of our Z table is up to 4.09 only. The answer may not be display.</div>
+					</div>
+				
+					<!--Compute Probability in of Greater than and less than-->
+					<div class="col-sm-12 style text box">
+					Find the <b>Greater than and Less than</b> of the sample mean 𝑿<br>
+					<input type="text" name="" id="value" placeholder="Value"><br><br>
+					
+					<!--Greater Than-->
+					<input type="button" style="background-color: green; color: white"  value="Compute Greater than" id="click_me1" onclick="Greater()"><br>
+					<input type="text" name="" placeholder="Display Part 1 Solution of Greater Than" id="displayFormulaGreater" style="width:70%; padding: 30px 30px; margin: 10px 0; box-sizing: border-box;">
+					<input type="text" name="" placeholder="Display Part 2 Solution of Greater Than" id="displayFormulaGreater2" style="width:70%; padding: 30px 30px; margin: 10px 0; box-sizing: border-box;"><br>
+					<input type="text" name="" placeholder="Answer" id="displayGreat" style="width:20%; padding: 30px 30px; margin: 10px 0; box-sizing: border-box;"><br><br><br><br>
+
+					<!--Less Than-->
+					<input type="button"  style="background-color: green; color: white"  value="Compute Less than" id="click_me1" onclick="Less()"><br>
+					<input type="text" name="" placeholder="Display Part 1 Solution of Less Than" id="displayFormulaLess" style="width:70%; padding: 30px 30px; margin: 10px 0; box-sizing: border-box;">
+					<input type="text" name="" placeholder="Display Part 2 Solution of Less Than" id="displayFormulaLess2" style="width:70%; padding: 30px 30px; margin: 10px 0; box-sizing: border-box;"><br>
+					<input type="text" name="" placeholder="Answer" id="displayLess" style="width:20%; padding: 30px 30px; margin: 10px 0; box-sizing: border-box;"><br>
+					
+					<br>
+					<br>
+					<br>
+					<input type="reset" name="" value="Clear">
+					<br><br>
+					<p> &copy;Made by Patricia Mae Namoro, Wilfredo Manuel &amp; Regine Taduran  </p>
+					</div>
+					
+
+			</form>
+		</div>
+		</div>
+
+		<script src="sampling.js">
+		</script>
+	</body>
+</html>  
